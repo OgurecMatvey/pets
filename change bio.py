@@ -1,0 +1,21 @@
+import os
+from telethon.sync import TelegramClient
+from telethon import functions
+import time
+
+api_id = "22952183"
+api_hash = "f6ab21d8324b9dd430c8135534bfe1af"
+
+with TelegramClient('session_name', api_id, api_hash) as client:
+    client.connect()
+    for i in range(100):
+        try:
+            print("Обновляем био...")
+            result = client(functions.account.UpdateProfileRequest(
+                about=f'{i}'
+            ))
+            print(f"Теперь ваше био: {i}")
+            time.sleep(120)  # Задержка перед следующей попыткой
+        except Exception as e:
+            print(f"Произошла ошибка: {e}")
+            time.sleep(120)  # Задержка перед повторной попыткой
