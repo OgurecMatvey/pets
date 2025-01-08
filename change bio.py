@@ -3,8 +3,8 @@ from telethon.sync import TelegramClient
 from telethon import functions
 import time
 
-api_id = "22952183"
-api_hash = "f6ab21d8324b9dd430c8135534bfe1af"
+api_id = "YOUR_ID"
+api_hash = "YOUR_HASH"
 
 with TelegramClient('session_name', api_id, api_hash) as client:
     client.connect()
