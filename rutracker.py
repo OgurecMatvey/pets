@@ -15,11 +15,9 @@ def search_rutracker(query, cookies_file):
     SEARCH_URL = f"https://rutracker.org/forum/tracker.php?nm={query}"
     scraper = cloudscraper.create_scraper()
 
-    # Загружаем cookies из файла
     cookies = load_cookies(cookies_file)
     scraper.cookies.update(cookies)
 
-    # Выполняем запрос
     response = scraper.get(SEARCH_URL)
     if response.status_code != 200:
         print("Ошибка при доступе к поиску.")
