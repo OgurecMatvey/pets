@@ -15,7 +15,7 @@ with TelegramClient('session_name', api_id, api_hash) as client:
                 about=f'{i}'
             ))
             print(f"Теперь ваше био: {i}")
-            time.sleep(120)  # Задержка перед следующей попыткой
+            time.sleep(120) 
         except Exception as e:
             print(f"Произошла ошибка: {e}")
-            time.sleep(120)  # Задержка перед повторной попыткой
+            time.sleep(120)  
